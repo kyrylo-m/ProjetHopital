@@ -1,0 +1,24 @@
+﻿<Window x:Class="ProjetHopital.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetHopital"
+        mc:Ignorable="d"
+        Title="Connexion" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="#4082f5">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="318" Margin="19,43,0,0" VerticalAlignment="Top" Width="339" Source="logo3.gif"/>
+        <Label Content="The Nothern Lights Hospital: Connexion"  HorizontalAlignment="Left" Margin="357,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" FontStyle="Italic" Foreground="#18068c" Height="48" Width="429"/>
+        <Label Content="Votre rôle :" HorizontalAlignment="Left" Margin="467,129,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Mot de passe :" HorizontalAlignment="Left" Margin="438,197,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <ComboBox x:Name="cboRole" HorizontalAlignment="Left" Margin="591,133,0,0" VerticalAlignment="Top" Width="120" Height="25" FontSize="16" SelectedIndex="0">
+            <ComboBoxItem>Admin</ComboBoxItem>
+            <ComboBoxItem>Médecin</ComboBoxItem>
+            <ComboBoxItem>Préposé</ComboBoxItem>
+        </ComboBox>
+        <PasswordBox x:Name="passMotDePasse" HorizontalAlignment="Left" Margin="591,203,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button x:Name="btnConnexion" IsDefault="True" Content="Connexion" HorizontalAlignment="Left" Margin="392,312,0,0" VerticalAlignment="Top" Width="165" Height="25" FontSize="16" Click="btnConnexion_Click" FontWeight="Bold"/>
+        <Button x:Name="btnFermer" IsCancel="True"  Content="Fermer" HorizontalAlignment="Left" Margin="591,312,0,0" VerticalAlignment="Top" Width="165" Height="25" FontSize="16" Click="btnFermer_Click" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="ProjetHopital.PreposeAccueil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetHopital"
+        mc:Ignorable="d"
+        Title="Prepose Accueil" Height="450" Width="800" Background="#61b6f2" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="The Nothern Lights Hospital: Préposé" HorizontalAlignment="Left" Margin="211,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontStyle="Italic" Foreground="#FF371CE2"/>
+        <Button x:Name="btnAfficherPatient" Content="Afficher patient" HorizontalAlignment="Left" Margin="7,374,0,0" VerticalAlignment="Top" Height="25"  Width="140" FontWeight="Bold" Click="btnAfficherPatient_Click" FontSize="14"/>
+        <Button x:Name="btnAjouterPatient" Content="Ajouter patient" HorizontalAlignment="Left" Margin="164,374,0,0" VerticalAlignment="Top" Height="25"  Width="140" FontWeight="Bold" FontSize="14" Click="btnAjouterPatient_Click"/>
+        <Button x:Name="btnAjouterAdmission" Content="Ajouter Admission" HorizontalAlignment="Left" Margin="324,374,0,0" VerticalAlignment="Top" Height="25"  Width="140" RenderTransformOrigin="0.714,9.453" FontWeight="Bold" FontSize="14" Click="btnAjouterAdmission_Click"/>
+        <Button x:Name="btnListerAdmissions" Content="Lister Admissions" HorizontalAlignment="Left" Margin="481,374,0,0" VerticalAlignment="Top" Height="25"  Width="140" RenderTransformOrigin="0.714,9.453" FontWeight="Bold" FontSize="14" Click="btnListerAdmissions_Click"/>
+        <Button x:Name="btnFermer" Content="Fermer" Height="25"  Width="140" HorizontalAlignment="Left" Margin="639,374,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnFermer_Click" FontSize="14"/>
+        <DataGrid x:Name="dgListePatients" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True" RowBackground="Azure"  AlternatingRowBackground="White" HorizontalAlignment="Left" Height="264" Margin="10,80,0,0" VerticalAlignment="Top" Width="772">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="NAM" Width="100" Binding="{Binding NumAssuranceMaladie}"/>
+                <DataGridTextColumn Header="Nom" Width="75" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header="Prenom" Width="75" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header="Date naissance" Width="100" Binding="{Binding DateNaissance, StringFormat=d, ConverterCulture=fr-CA}"/>
+                <DataGridTextColumn Header="Telephone" Width="90" Binding="{Binding Telephone}"/>
+                <DataGridTextColumn Header="Adresse" Width="150" Binding="{Binding Adresse}"/>
+                <DataGridTextColumn Header="Ville" Width="70" Binding="{Binding Ville}"/>
+                <DataGridTextColumn Header="Pr." Width="30" Binding="{Binding Province}"/>
+                <DataGridTextColumn Header="Code postal" Width="70" Binding="{Binding CodePostal}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Liste des patients de l'hôpital" HorizontalAlignment="Left" Margin="273,42,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <CheckBox x:Name="chNonHospitalises" Content="Seulement non-hospitalisés présentement" HorizontalAlignment="Left" Margin="527,352,0,0" VerticalAlignment="Top" Click="chNonHospitalises_Click"/>
+
+    </Grid>
+</Window>

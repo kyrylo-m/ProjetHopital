@@ -1,0 +1,29 @@
+﻿<Window x:Class="ProjetHopital.AdminAccueil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetHopital"
+        mc:Ignorable="d"
+        Title="Admin Accueil" Height="450" Width="800" Background="#61b6f2" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="The Nothern Lights Hospital: Admin" HorizontalAlignment="Left" Margin="225,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontStyle="Italic" Foreground="#FF371CE2"/>
+        <Button x:Name="btnEnregistrerMedecin" Content="Enregistrer médecin" HorizontalAlignment="Left" Margin="54,367,0,0" VerticalAlignment="Top" Height="25"  Width="140" Click="btnEnregistrerMedecin_Click" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btnCongedierMedecin" Content="Congédier médecin" HorizontalAlignment="Left" Margin="234,367,0,0" VerticalAlignment="Top" Height="25"  Width="140" RenderTransformOrigin="0.714,9.453" Click="btnCongedierMedecin_Click" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btnSupprimerMedecin" Content="Supprimer médecin" BorderBrush="Red" HorizontalAlignment="Left" Margin="414,367,0,0" VerticalAlignment="Top" Height="25"  Width="140" RenderTransformOrigin="0.714,9.453" Click="btnSupprimerMedecin_Click" FontWeight="Bold" BorderThickness="3" FontSize="14"/>
+        <Button x:Name="btnFermer" Content="Fermer" Height="25"  Width="140" HorizontalAlignment="Left" Margin="596,367,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnFermer_Click" FontSize="14"/>
+        <DataGrid x:Name="dgListeMedecins" AutoGenerateColumns="False" ItemsSource="{Binding}" RowBackground="Azure"  AlternatingRowBackground="White" HorizontalAlignment="Left" Height="244" Margin="121,80,0,0" VerticalAlignment="Top" Width="552">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="75" IsReadOnly="True" Binding="{Binding IdMedecin}"/>
+                <DataGridTextColumn Header="Nom" Width="100" Binding="{Binding Nom}"/>
+                <DataGridTextColumn Header="Prenom" Width="100" Binding="{Binding Prenom}"/>
+                <DataGridTextColumn Header="Spécialité" Width="100" Binding="{Binding Specialite}"/>
+                <DataGridTextColumn Header="Présentement embauché" Width="150" Binding="{Binding EmbaucheParHopital}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <CheckBox x:Name="chkEmbauches" Content="Seulement présentement embauchés" IsChecked="True" HorizontalAlignment="Left" Margin="516,332,0,0" VerticalAlignment="Top" Height="17" Width="234" Click="chkEmbauches_Click"/>
+        <Label Content="Liste des médecins de l'hôpital" HorizontalAlignment="Left" Margin="280,47,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="* Pour ajouter un médecin, entrez ses infos à la fin de la table" HorizontalAlignment="Left" Margin="54,332,0,0" VerticalAlignment="Top" FontSize="13"/>
+
+    </Grid>
+</Window>

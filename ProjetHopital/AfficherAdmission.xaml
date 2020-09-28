@@ -1,0 +1,76 @@
+﻿<Window x:Class="ProjetHopital.AfficherAdmission"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetHopital"
+        mc:Ignorable="d"
+        Title="Afficher Admission" Height="450" Width="800" Background="#61b6f2" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="The Nothern Lights Hospital: Préposé" HorizontalAlignment="Left" Margin="225,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontStyle="Italic" Foreground="#FF371CE2" />
+        <Label Content="Affichage d'admission" HorizontalAlignment="Left" Margin="306,48,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" />
+        <Label Content="Numéro AM" HorizontalAlignment="Left" Margin="29,109,0,0" VerticalAlignment="Top" FontSize="14" />
+        <Label Content="Assurance privée" HorizontalAlignment="Left" Margin="2,332,0,0" VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.447,0.581" />
+        <TextBox x:Name="txtPrenom" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="128,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <DatePicker x:Name="dpDateNaissance" HorizontalAlignment="Left" Margin="129,247,0,0" VerticalAlignment="Top" >
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type DatePickerTextBox}">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <TextBox x:Name="txtAssurancePrivee" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="129,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="74,152,0,0" VerticalAlignment="Top" FontSize="14" />
+        <Label Content="Prénom" HorizontalAlignment="Left" Margin="57,200,0,0" VerticalAlignment="Top" FontSize="14" />
+        <Label Content="Date Naissance" HorizontalAlignment="Left" Margin="11,245,0,0" VerticalAlignment="Top" FontSize="14" />
+        <Label Content="Patient" HorizontalAlignment="Left" Margin="108,75,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txtAge" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="129,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="81,287,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <DatePicker x:Name="dpDateDebutAdmission" HorizontalAlignment="Left" Margin="402,155,0,0" VerticalAlignment="Top">
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type DatePickerTextBox}">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Label Content="Date Admission" HorizontalAlignment="Left" Margin="285,154,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <DatePicker x:Name="dpDateConge" HorizontalAlignment="Left" Margin="402,203,0,0" VerticalAlignment="Top">
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type DatePickerTextBox}">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Label Content="Date de Congé" HorizontalAlignment="Left" Margin="289,200,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Chirurgie prévue" HorizontalAlignment="Left" Margin="293,241,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="txtChirurgieOuiNon" Content="Oui/Non" HorizontalAlignment="Left" Margin="434,242,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <DatePicker x:Name="dpDateChirurgie" HorizontalAlignment="Left" Margin="402,290,0,0" VerticalAlignment="Top">
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type DatePickerTextBox}">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Label Content="Date Chirurgie" HorizontalAlignment="Left" Margin="294,287,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Médecin" HorizontalAlignment="Left" Margin="330,332,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="ID d'admission" HorizontalAlignment="Left" Margin="291,108,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtIdAdmission" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="402,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMedecin" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="402,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtNAM" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="129,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtNomPatient" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="129,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Departement" HorizontalAlignment="Left" Margin="569,110,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtDepartement" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="672,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <Label Content="Numéro Lit" HorizontalAlignment="Left" Margin="576,153,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtNumeroLit" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="672,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <Label Content="Type chambre" HorizontalAlignment="Left" Margin="569,198,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="txtTypeChambre" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="672,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <Label Content="Surclassement gratuit" HorizontalAlignment="Left" Margin="550,240,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="txtSurclassementGratuitOuiNon" Content="Oui/Non" HorizontalAlignment="Left" Margin="704,241,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Location TV" HorizontalAlignment="Left" Margin="610,285,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="txtLocationTvOuiNon" Content="Oui/Non" HorizontalAlignment="Left" Margin="704,285,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Location téléphone" HorizontalAlignment="Left" Margin="564,330,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="txtLocationTelephoneOuiNon" Content="Oui/Non" HorizontalAlignment="Left" Margin="704,330,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="306,379,0,0" VerticalAlignment="Top" Width="165" Height="25" FontSize="14" FontWeight="Bold" Click="btnOK_Click"/>
+
+    </Grid>
+</Window>

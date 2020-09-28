@@ -1,0 +1,45 @@
+﻿<Window x:Class="ProjetHopital.AfficherPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetHopital"
+        mc:Ignorable="d"
+        Title="Patient" Height="450" Width="800" Background="#61b6f2" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="gridAfficherPatient" Margin="1,0,-1,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="343*"/>
+            <ColumnDefinition Width="449*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="The Nothern Lights Hospital: Préposé" HorizontalAlignment="Left" Margin="232,9,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" FontStyle="Italic" Foreground="#FF371CE2" Grid.ColumnSpan="2"/>
+        <Label Content="Affichage d'un patient" HorizontalAlignment="Left" Margin="309,50,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Numéro AM" HorizontalAlignment="Left" Margin="30,102,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <ComboBox x:Name="cboNAM" ItemsSource="{Binding}" DisplayMemberPath="NumAssuranceMaladie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142,108,0,0" SelectionChanged="cboNAM_SelectionChanged"/>
+        <ComboBox x:Name="cboNom" ItemsSource="{Binding}" DisplayMemberPath="Nom" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142,156,0,0" SelectionChanged="cboNom_SelectionChanged" />
+        <TextBox x:Name="txtPrenom" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="142,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTelephone" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="142,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="txtAdresse" HorizontalAlignment="Left" Margin="143,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="49"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="82,153,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Prenom" HorizontalAlignment="Left" Margin="62,194,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Téléphone" HorizontalAlignment="Left" Margin="44,241,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" Margin="61,300,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.515,1.635" FontSize="16"/>
+        <DatePicker x:Name="dpDateNaissance" HorizontalAlignment="Left" Margin="220.97,107,0,0" VerticalAlignment="Top" Grid.Column="1">
+            <DatePicker.Resources>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="57.97,102,0,0" VerticalAlignment="Top" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="txtAssurancePrivee" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="220.97,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="txtParentNom" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="220.97,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Assurance privée" HorizontalAlignment="Left" Margin="65.97,153,0,0" VerticalAlignment="Top" FontSize="16" Grid.Column="1"/>
+        <Label Content="Parent" HorizontalAlignment="Left" Margin="173.97,194,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Nom, prénom" HorizontalAlignment="Left" Margin="85.97,241,0,0" VerticalAlignment="Top" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="txtParentTelephone" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="220.97,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Téléphone" HorizontalAlignment="Left" Margin="111.97,300,0,0" VerticalAlignment="Top" FontSize="16" Grid.Column="1"/>
+        <Button x:Name="btnAjouterAdmission" Content="Ajouter Admission" HorizontalAlignment="Left" Margin="189,373,0,0" VerticalAlignment="Top" Height="25"  Width="165" FontWeight="Bold" Click="btnAjouterAdmission_Click" FontSize="14" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnFermer" Content="Fermer" HorizontalAlignment="Left" Margin="64.97,373,0,0" VerticalAlignment="Top" Height="25"  Width="165" FontWeight="Bold" Click="BtnFermer_Click" FontSize="14" Grid.Column="1"/>
+
+    </Grid>
+</Window>
